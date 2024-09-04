@@ -3,6 +3,15 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: Helvetica, Arial, sans-serif;
+}
+#calculator-container {
+    border-radius: 25px;
+    border: 1px solid #6C8EBF;
+    background-color: #DAE8FC;
+    padding: 20px;
+    width: 200px;
+    height: 250px;
 }
 #button-screen-container {
     display: flex;
