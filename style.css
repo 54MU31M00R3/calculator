@@ -4,38 +4,75 @@ body{
     align-items: center;
     height: 100vh;
     font-family: Helvetica, Arial, sans-serif;
+    font-size: 12pt;
 }
 #calculator-container {
-    border-radius: 25px;
+    border-radius: 20px;
     border: 1px solid #6C8EBF;
     background-color: #DAE8FC;
     padding: 20px;
-    width: 200px;
-    height: 250px;
+    width: 400px;
+    height: 550px;
 }
 #button-screen-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 16px;
 }
 #screen-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    gap: 24px;
 }
 #screen {
-    border-radius: 25px;
+    border-radius: 20px;
     border: 1px solid #36393D;
     background-color: #EEEEEE;
-    padding: 20px;
-    width: 150px;
+    padding: 50px;
+    margin-top: 16px;
+    width: 250px;
     text-align: end;
 }
 #screen-buttons {
     display: flex;
+    width: 350px;
 }
 #operation-container {
     display: flex;
+    width: 350px;
+}
+#operand-buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+.mini-button {
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+    width: 30px;
+}
+.equals-button{
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+    width: 135px;
+}
+.zero-button {
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+    width: 113px;
+}
+.shaded {
+    background-color: #EEEEEE;
 }
