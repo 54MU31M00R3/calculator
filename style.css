@@ -35,8 +35,13 @@ body{
     padding: 50px;
     margin-top: 16px;
     width: 250px;
-    text-align: end;
+    height: 25px;
     font-size: 18pt;
+
+    display: flex;
+    justify-content: flex-end;
+    white-space: nowrap;
+    overflow: hidden;
 }
 #screen-buttons {
     display: flex;
