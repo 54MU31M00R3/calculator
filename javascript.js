@@ -89,7 +89,10 @@ function multiply(a, b) {
 
 function divide(a, b) {
     let quotient = a / b;
-    return quotient;
+    if (b === 0){
+        return "nice try";
+    }
+    return +quotient.toFixed(2);
 }
 
 function operate(array) {
@@ -112,9 +115,13 @@ function operate(array) {
         }
     }
 
+    if (concatNumbers.length !== 3 ){
+        return "ERROR";
+    }
+    console.log(concatNumbers.length)
 
     if (concatNumbers[0] == 'Ans'){
-        concatNumbers.splice(0, 1, runningTotal)
+        concatNumbers.splice(0, 1, runningTotal);
     } 
     
     let firstOperand = parseFloat(concatNumbers[0])
