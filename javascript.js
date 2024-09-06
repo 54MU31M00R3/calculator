@@ -22,6 +22,10 @@ numpad.forEach(operand => {
 
 operators.forEach(operator => {
     operator.addEventListener("click", () => {
+        if (screenText.length === 0){
+            screenText.push('Ans')
+        }
+
         if (!(symbols.includes(screenText[screenText.length -1]))){
             screenText.push(operator.textContent.trim());
         } else {
@@ -29,7 +33,7 @@ operators.forEach(operator => {
         }
         screen.textContent = screenText.join('');
         console.log(screenText)
-    })  
+    })
 });
 
 decimalBtn.addEventListener("click", () => {
@@ -62,7 +66,10 @@ allClearBtn.addEventListener("click", () => {
 });
 
 equalsBtn.addEventListener("click", () => {
-
+    total = operate(screenText);
+    runningTotal = total;
+    screen.textContent = runningTotal;
+    screenText = [];
 });
 
 function add(a, b) {
@@ -86,5 +93,41 @@ function divide(a, b) {
 }
 
 function operate(array) {
-    return total;
+    let concatNumbers = [];
+    let number = '';
+
+    for (let i = 0; i < array.length; i++){
+        if (symbols.includes(array[i])){
+            concatNumbers.push(number, array[i])
+            number = '' + array[++i];
+            if (i === array.length - 1) {
+                concatNumbers.push(number);
+            }
+        } else if (i === array.length - 1) {
+            number += array[i];
+            concatNumbers.push(number);
+        }
+        else {
+            number += array[i];
+        }
+    }
+
+
+    if (concatNumbers[0] == 'Ans'){
+        concatNumbers.splice(0, 1, runningTotal)
+    } 
+    
+    let firstOperand = parseFloat(concatNumbers[0])
+    let secondOperand = parseFloat(concatNumbers[2])
+
+    console.log(concatNumbers)
+    if (concatNumbers[1]=== "*"){
+        return multiply(firstOperand, secondOperand);
+    } else if (concatNumbers[1]=== "/"){
+        return divide(firstOperand, secondOperand);
+    } else if (concatNumbers[1]=== "+"){
+        return add(firstOperand, secondOperand);
+    } else if (concatNumbers[1]=== "-"){
+        return subtract(firstOperand, secondOperand);
+    }
 }
